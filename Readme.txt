@@ -1,2 +1,2 @@
 ﻿The new instagrim  is  using Cassandra as a back end.   The app allows colorful picture uploads, creates a colorful thumbnail and 
-a  B/W version of the picture, and   login&logout function.
+a  B/W version of the picture, and   login&logout function.And there is a picture ground,you can see every user's picture there,and make comments.
