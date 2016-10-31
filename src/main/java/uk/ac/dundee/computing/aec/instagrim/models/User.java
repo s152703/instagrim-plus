@@ -51,12 +51,9 @@ public class User {
       session.execute( 
                boundStatement1.bind( 
                        username));
-     String code1="update userprofiles SET comment = comment + {\'"+comment+"\'} where login=?";
-        PreparedStatement qwe = session.prepare(code1);
-      BoundStatement boundStatement3 = new BoundStatement(qwe);
-      session.execute( 
-               boundStatement1.bind( 
-                       username));
+      
+    
+    
         PreparedStatement qe = session.prepare("update  userprofiles set first_name=?,last_name=? where login=?");
        
         BoundStatement boundStatement2 = new BoundStatement(qe);
@@ -79,12 +76,14 @@ public class User {
             return false;
         }
         Session session = cluster.connect("instagrim");
+        
         PreparedStatement ps = session.prepare("select password from userprofiles where login =?");
         ResultSet rs = null;
         BoundStatement boundStatement = new BoundStatement(ps);
         rs = session.execute( // this is where the query is executed
                 boundStatement.bind( // here you are binding the 'boundStatement'
                         username));
+        
         if (rs.isExhausted()) {
             System.out.println("No Images returned");
             return false;

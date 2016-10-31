@@ -137,7 +137,11 @@ public class Image extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //String comment=request.getParameter("comment");
+        HttpSession session=request.getSession();
+        System.out.print("inside comment");
         for (Part part : request.getParts()) {
+            if (!part.getName().equals("comment")) {
             System.out.println("Part Name " + part.getName());
 
             String type = part.getContentType();
@@ -146,7 +150,7 @@ public class Image extends HttpServlet {
             
             InputStream is = request.getPart(part.getName()).getInputStream();
             int i = is.available();
-            HttpSession session=request.getSession();
+            //HttpSession session=request.getSession();
             LoggedIn lg= (LoggedIn)session.getAttribute("LoggedIn");
             String username="majed";
             if (lg.getlogedin()){
@@ -164,6 +168,13 @@ public class Image extends HttpServlet {
             }
             RequestDispatcher rd = request.getRequestDispatcher("/upload.jsp");
              rd.forward(request, response);
+        }else{
+                String username=request.getParameter("comment");
+                System.out.print(username);
+                session.setAttribute("comment",username);
+                RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
+             rd.forward(request, response);
+            }
         }
 
     }

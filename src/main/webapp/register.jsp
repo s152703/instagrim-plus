@@ -68,7 +68,7 @@ p{
        
         <article>
        <br>
-            <h3>          Register as user!</h3>
+            <h3>          Register as a user!</h3>
             <br>
             <form method="POST"  action="Register">
                  

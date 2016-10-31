@@ -1,4 +1,4 @@
-<%-- 
+<%-- lala
     Document   : UsersPics
     Created on : Sep 24, 2014, 2:52:48 PM
     Author     : Administrator
@@ -32,6 +32,12 @@ h1 {
   font-size:72px;
   text-shadow: lightgrey 2px 2px 2px;
 }
+form{
+ 
+  
+ text-align: center;
+ 
+  }
 p2{
  
   white-space: pre;
@@ -57,7 +63,7 @@ p2{
   }
     </style>
     <body>
-        <header>
+
         
        <a href="/Instagrim">   ||Home||  </a><a href="/Instagrim/upload.jsp">  ||Upload||</a>
        <!-- <a href="/Instagrim/Images/majed">||Sample Images||-->
@@ -67,7 +73,7 @@ p2{
         
         
         
-        </header>
+
         
         
             
@@ -100,9 +106,13 @@ p2{
         <P id="demo">456</p>
         document.getElementById("demo").innerHTML="Add comments here ";
         </script>
-        <form method="POST"  action="comment">
+        <%String a=(String)session.getAttribute("comment");%>
+        <p><%=a%></p>
+        <form method="POST" enctype="multipart/form-data" action="Image">
                   
-                  <p>Comment:<input style="font-size:15px;"type="text" name="username"> <input style="font-size:15px;color:cadetblue;" type="submit" value="Send" > </p>
+                  Comment:<input style="font-size:15px;"type="text" name="comment">
+                  <input style="font-size:15px;color:cadetblue;" type="submit" value="Send" > 
+                  
                   
             </form>
         <br><br>||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||<br><br><br>
