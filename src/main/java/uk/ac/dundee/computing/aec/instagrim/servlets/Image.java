@@ -172,8 +172,7 @@ public class Image extends HttpServlet {
                 String username=request.getParameter("comment");
                 System.out.print(username);
                 session.setAttribute("comment",username);
-                RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-             rd.forward(request, response);
+                response.sendRedirect("/Instagrim/index.jsp");
             }
         }
 
